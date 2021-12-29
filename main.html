@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>JavaScript</title>
+</head>
+<body>
+    <!-- Onclick -->
+    <div>
+        <h1>onclick</h1>
+    <!-- Cach1 -->
+    <!-- <h1 onclick="alert('Hello!')">Click me!</h1>  -->
+    <!-- <h1 id="click1" class="click1">Click me!</h1> -->
+    <p id="click1">Click now!</p>
+    <button>Click me!</button>
+    <!-- Cach2-->
+    <button class="click2" onclick="clickMe()">Click me2!</button>
+    </div>
+   
+    <!-- onChange -->
+    <div>
+        <h1>onChange</h1>
+        <select id="select1" onchange="mySelect()">
+            <option value="js">js</option>
+            <option value="php">php</option>
+            <option value="java">java</option>
+            <option value="net">.Net</option>
+        </select>
+        <select id="select2">
+            <option value="js">js</option>
+            <option value="php">php</option>
+            <option value="java">java</option>
+            <option value="net">.Net</option>
+        </select>
+        <div>
+            <!-- <input type="text" id="demoChange" onchange="myCheck()"> -->
+            <input type="text" id="demoChange1" onchange="alert(this.value)">
+            <button id="btnCheck" >check</button>
+        </div>
+    </div>
+    <div>
+        <h1>Key up</h1>
+    </div>
+    <script>
+        // onclick start 
+        // Cach2
+        function clickMe() {
+            alert('Hello2');
+        }
+        //Cach 3
+        document.getElementById("click1").onclick = function() {myClick()};
+        function myClick() {
+            alert('hello3')
+        }
+        //Cach 4
+        // document.querySelector('h1').addEventListener('click', function() {
+        //     alert('Hello4!');
+        // });
+        // document.querySelector('button').addEventListener('click', function() {
+        //     alert('Hello4!');
+        // });
+        //onclick end
+
+        //onchange start 
+        // cach 1:
+        function mySelect() {
+            let x = document.getElementById('select1').value;
+            console.log(x);
+        };
+        // function myCheck() {
+        //     let x = document.getElementById('demoChange').value;
+        //     document.getElementById('btnCheck').onclick = function() {
+        //         alert(x);
+        //     }
+        // }
+        // Cach 2
+        // document.getElementById('select2').onchange = function() {mySelect2()}
+        // function mySelect2() {
+        //     let x = document.getElementById('select2').value;
+        //     alert(x);
+        // }
+        // document.getElementById('demoChange1').onchange = function() {
+        //     let x = document.getElementById('demoChange1').value;
+        //     document.getElementById('btnCheck').onclick = function() {
+        //         console.log(x);
+        //     }
+        // }
+        //cach 3
+        // document.querySelector('#select2').addEventListener('change', function() {mySelect2()})
+        // document.querySelector('#demoChange1').addEventListener('change', function(){
+        //     let x = document.getElementById('demoChange1').value;
+        //     document.getElementById('btnCheck').onclick = function() {
+        //         alert(x);
+        //     }
+        // });
+        //onchange end
+
+        //keyup start
+
+        //keyup end
+    </script>
+<script src="main.js"></script>
+</body>
+</html>
