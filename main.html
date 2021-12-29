@@ -18,7 +18,15 @@
     <!-- Cach2-->
     <button class="click2" onclick="clickMe()">Click me2!</button>
     </div>
-   
+    <!-- onclick demo 2 -->
+   <div class="demoClick2">
+       <h1>Demo on Click 2</h1>
+       <input id="new-item" type="text"/>
+       <button onclick="addItem()">Add!</button>
+       <ul id="toDoList">
+
+       </ul>
+   </div>
     <!-- onChange -->
     <div>
         <h1>onChange</h1>
@@ -43,7 +51,7 @@
     <div>
         <h1>Key up</h1>
     </div>
-    <script>
+    <script type="text/javascript">
         // onclick start 
         // Cach2
         function clickMe() {
@@ -61,6 +69,25 @@
         // document.querySelector('button').addEventListener('click', function() {
         //     alert('Hello4!');
         // });
+        
+        //onclick demo2 
+        var toDoList = [];
+        function addItem(){
+            //lay dk o input
+            var input = document.getElementById('new-item');
+            var newItem = input.value;
+            //them toDoList  thanh array 
+            toDoList.push(newItem);
+            render();
+            input.value = '';
+        }
+         function render() {
+             var htmlList = document.getElementById('toDoList');
+             var content = toDoList.map(function(item) {
+                 return '<li>' + item + '</li>';
+             });
+             htmlList.innerHTML = content.join('');
+         }
         //onclick end
 
         //onchange start 
